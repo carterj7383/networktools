@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-header">
+    <h2>Wildcard Mask Calculator</h2>
+</div>
+<div class="card-content">
+    <form method="post">
+        <div class="form-group">
+            <label for="ip_cidr_input">IP Address/CIDR:</label>
+            <input type="text" id="ip_cidr_input" name="ip_with_cidr" required>
+        </div>
+        <button type="submit"><span>Calculate</span></button>
+    </form>
+
+    {% if result %}
+    <div class="result-section">
+        <div class="result-entry">
+            <div class="result-line">
+                <strong>Wildcard Mask:</strong> {{ result }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
