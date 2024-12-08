@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="device-frame">
+        <div class="status-lights">
+            <div class="status-light"></div>
+            <div class="status-light"></div>
+            <div class="status-light"></div>
+        </div>
+
+        <div class="device-screen">
+            <nav>
+                <div class="container">
+                    <a href="{{ url_for('home') }}" class="{{ 'active' if request.endpoint == 'home' else '' }}"><span>Home</span></a>
+                    <a href="{{ url_for('binary_to_decimal') }}"><span>Binary to Decimal</span></a>
+                    <a href="{{ url_for('decimal_to_binary') }}"><span>Decimal to Binary</span></a>
+                    <a href="{{ url_for('classful_analysis') }}"><span>Classful Analysis</span></a>
+                    <a href="{{ url_for('wildcard_mask') }}"><span>Wildcard Mask</span></a>
+                    <a href="{{ url_for('show_results') }}"><span>Results</span></a>
+                </div>
+            </nav>
+
+            <div class="container">
+                <main>
+                    <div class="card">
+                        <div class="tech-corner top-left"></div>
+                        <div class="tech-corner top-right"></div>
+                        {% block content %}{% endblock %}
+                    </div>
+                </main>
+            </div>
+
+            <footer>
+                <div class="container">
+                    Design By jXsh
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

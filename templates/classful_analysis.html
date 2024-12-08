@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-header">
+    <h2>Classful Address Analysis</h2>
+</div>
+<div class="card-content">
+    <form method="post">
+        <div class="form-group">
+            <label for="ip_input">IP Address:</label>
+            <input type="text" id="ip_input" name="ip_address" required>
+        </div>
+        <button type="submit"><span>Analyze</span></button>
+    </form>
+
+    {% if result %}
+    <div class="result-section">
+        <div class="result-entry">
+            <div class="result-line">
+                <strong>IP Class:</strong> {{ result }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

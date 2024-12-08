@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-header">
+    <h2>Binary to Decimal Conversion</h2>
+</div>
+
+<div class="card-content">
+    <form method="post">
+        <div class="form-group">
+            <label for="binary_input">Binary Number:</label>
+            <input type="text" id="binary_input" name="binary_number" required>
+        </div>
+        <button type="submit"><span>Convert</span></button>
+    </form>
+
+    {% if result %}
+    <div class="result-section">
+        <div class="result-entry">
+            <strong>Decimal Value:</strong> {{ result }}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
