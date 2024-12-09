@@ -1,24 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="card-header">
-    <h2>Binary to Decimal Conversion</h2>
-</div>
-
-<div class="card-content">
-    <form method="post">
-        <div class="form-group">
-            <label for="binary_input">Binary Number:</label>
-            <input type="text" id="binary_input" name="binary_number" required>
-        </div>
-        <button type="submit"><span>Convert</span></button>
-    </form>
-
-    {% if result %}
-    <div class="result-section">
-        <div class="result-entry">
-            <strong>Decimal Value:</strong> {{ result }}
-        </div>
+    <div class="cardheader">
+        <h2>Binary to Decimal Conversion</h2>
     </div>
-    {% endif %}
-</div>
+
+    <div class="cardcontent">
+        <div class="questiondisplay">
+            <p>Convert the following binary number to a decimal:</p>
+            <div class="binarydisplay">{{ binary_number }}</div>
+        </div>
+
+        <form method="POST">
+            <div class="formgroup">
+                <label for="decimal_answer">Your Decimal Answer:</label>
+                <input type="text" id="decimal_answer" name="decimal_answer" placeholder="Enter a decimal value" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if result %}
+        <div class="resultsection">
+            <div class="resultentry">
+                <div class="resultline">
+                    <strong>Result:</strong> {{ result }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
 {% endblock %}
